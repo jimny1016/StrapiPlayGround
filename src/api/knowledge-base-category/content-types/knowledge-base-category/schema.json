@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "knowledge_base_categories",
+  "info": {
+    "singularName": "knowledge-base-category",
+    "pluralName": "knowledge-base-categories",
+    "displayName": "KnowledgeBaseCategory",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "knowledge_base_articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::knowledge-base-article.knowledge-base-article",
+      "mappedBy": "knowledge_base_category"
+    }
+  }
+}

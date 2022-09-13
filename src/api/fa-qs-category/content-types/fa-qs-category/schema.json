@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fa_qs_categories",
+  "info": {
+    "singularName": "fa-qs-category",
+    "pluralName": "fa-qs-categories",
+    "displayName": "FAQsCategory",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "faqs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::faq.faq",
+      "mappedBy": "fa_qs_category"
+    }
+  }
+}
