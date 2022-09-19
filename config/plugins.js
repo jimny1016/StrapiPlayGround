@@ -1,4 +1,4 @@
-module.exports = () => {
+module.exports = ({ env }) => {
     return {
       ckeditor: {
        enabled: true,
@@ -155,6 +155,19 @@ module.exports = () => {
             },
           }
         }
-      }
+      },
+      upload: {
+        config: {
+          provider: "strapi-provider-upload-ftp-v2",
+          providerOptions: {
+            host: env("FTP_HOST","64.27.16.168"),
+            port: env("FTP_PORT","21"),
+            user: env("FTP_USER","rexwu"),
+            password: env("FTP_PASSWORD","iBuy11235811"),
+            basePath: env("FTP_BASEPATH","/"),
+            baseUrl: env("FTP_BASEURL","https://content.ibuypower.com/"),
+          },
+        },
+      },
     }
   }
